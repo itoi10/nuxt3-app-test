@@ -1,0 +1,6 @@
+# Nuxt 3
+
+## ESlint設定
+
+Nuxt 3 with ESLint
+https://qiita.com/kentarou_masuda/items/c0180fe383b01ba54cbf
