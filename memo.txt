@@ -4,3 +4,13 @@
 
 Nuxt 3 with ESLint
 https://qiita.com/kentarou_masuda/items/c0180fe383b01ba54cbf
+
+
+## Nuxt3 + Vuetify3 設定
+
+Nuxt3 + Vuetify3 + Volarの開発環境を構築する
+https://zenn.dev/winteryukky/articles/87a40b60fddb96
+
+
+VUETIFY UIコンポーネント
+https://vuetifyjs.com/ja/components/alerts/

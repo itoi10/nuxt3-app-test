@@ -17,6 +17,16 @@ export default defineNuxtConfig({
       appId: process.env.APP_ID,
       measurementId: process.env.MEASUREMENT_ID
     }
+  },
+
+  css: ['vuetify/lib/styles/main.sass'],
+  build: {
+    transpile: ['vuetify']
+  },
+  vite: {
+    define: {
+      'process.env.DEBUG': false
+    }
   }
 
 })
