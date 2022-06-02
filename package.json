@@ -20,6 +20,8 @@
   "dependencies": {
     "firebase": "^9.8.1",
     "sass": "^1.52.1",
+    "vis-data": "^7.1.4",
+    "vis-network": "^9.1.2",
     "vuetify": "^3.0.0-beta.2"
   }
 }

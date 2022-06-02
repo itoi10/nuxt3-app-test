@@ -1,62 +1,70 @@
 <template>
-    <v-container>
-        <h1>H1 text</h1>
-        <v-btn @click="isok = !isok">
-            v-btn toggle ok
-        </v-btn>
-        <div class="py-3">
-            ok: {{ isok }}
+  <v-container>
+    <h1>H1 text</h1>
+    <v-btn @click="isok = !isok">
+      v-btn toggle ok
+    </v-btn>
+    <div class="py-3">
+      ok: {{ isok }}
+    </div>
+
+    <v-card :loading="loading" class="mx-auto my-12" max-width="374">
+      <template slot="progress">
+        <v-progress-linear color="deep-purple" height="10" indeterminate />
+      </template>
+
+      <v-img height="250" src="https://cdn.vuetifyjs.com/images/cards/cooking.png" />
+
+      <v-card-title>Cafe Badilico</v-card-title>
+
+      <v-card-text>
+        <v-row align="center" class="mx-0">
+          <v-rating
+            :value="4.5"
+            color="amber"
+            dense
+            half-increments
+            readonly
+            size="14"
+          />
+
+          <div class="grey--text ms-4">
+            4.5 (413)
+          </div>
+        </v-row>
+
+        <div class="my-4 text-subtitle-1">
+          $ • Italian, Cafe
         </div>
 
-        <v-card :loading="loading" class="mx-auto my-12" max-width="374">
-            <template slot="progress">
-                <v-progress-linear color="deep-purple" height="10" indeterminate></v-progress-linear>
-            </template>
+        <div>
+          Small plates, salads & sandwiches - an intimate setting with 12 indoor seats plus patio seating.
+        </div>
+      </v-card-text>
 
-            <v-img height="250" src="https://cdn.vuetifyjs.com/images/cards/cooking.png"></v-img>
+      <v-divider class="mx-4" />
 
-            <v-card-title>Cafe Badilico</v-card-title>
+      <v-card-title>Tonight's availability</v-card-title>
 
-            <v-card-text>
-                <v-row align="center" class="mx-0">
-                    <v-rating :value="4.5" color="amber" dense half-increments readonly size="14"></v-rating>
+      <v-card-text>
+        <v-chip-group v-model="selection" active-class="deep-purple accent-4 white--text" column>
+          <v-chip>5:30PM</v-chip>
 
-                    <div class="grey--text ms-4">
-                        4.5 (413)
-                    </div>
-                </v-row>
+          <v-chip>7:30PM</v-chip>
 
-                <div class="my-4 text-subtitle-1">
-                    $ • Italian, Cafe
-                </div>
+          <v-chip>8:00PM</v-chip>
 
-                <div>Small plates, salads & sandwiches - an intimate setting with 12 indoor seats plus patio seating.
-                </div>
-            </v-card-text>
+          <v-chip>9:00PM</v-chip>
+        </v-chip-group>
+      </v-card-text>
 
-            <v-divider class="mx-4"></v-divider>
-
-            <v-card-title>Tonight's availability</v-card-title>
-
-            <v-card-text>
-                <v-chip-group v-model="selection" active-class="deep-purple accent-4 white--text" column>
-                    <v-chip>5:30PM</v-chip>
-
-                    <v-chip>7:30PM</v-chip>
-
-                    <v-chip>8:00PM</v-chip>
-
-                    <v-chip>9:00PM</v-chip>
-                </v-chip-group>
-            </v-card-text>
-
-            <v-card-actions>
-                <v-btn color="deep-purple lighten-2" text @click="reserve">
-                    Reserve
-                </v-btn>
-            </v-card-actions>
-        </v-card>
-    </v-container>
+      <v-card-actions>
+        <v-btn color="deep-purple lighten-2" text @click="reserve">
+          Reserve
+        </v-btn>
+      </v-card-actions>
+    </v-card>
+  </v-container>
 </template>
 
 <script setup lang="ts">
@@ -66,8 +74,8 @@ const loading = ref(false)
 const selection = ref(1)
 
 const reserve = () => {
-    loading.value = true
+  loading.value = true
 
-    setTimeout(() => loading.value = false)
+  setTimeout(() => loading.value = false)
 }
 </script>
