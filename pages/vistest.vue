@@ -1,14 +1,16 @@
 <template>
   <div>
-    <button @click="visSetup">リセット</button>
-    <div id="network"></div>
+    <button @click="visSetup">
+      リセット
+    </button>
+    <div id="network" />
   </div>
 </template>
 
 <script setup>
 
-import { DataSet } from 'vis-data';
-import { Network } from 'vis-network';
+import { DataSet } from 'vis-data'
+import { Network } from 'vis-network'
 
 const visSetup = () => {
   const nodes = new DataSet([
@@ -23,8 +25,8 @@ const visSetup = () => {
     { id: 9, label: ' ', shape: 'circle' },
     { id: 10, label: 'セキチクシティ', shape: 'circle' },
     { id: 11, label: 'グレンタウン', shape: 'circle' },
-    { id: 12, label: 'セキエイこうげん', shape: 'circle' },
-  ]);
+    { id: 12, label: 'セキエイこうげん', shape: 'circle' }
+  ])
   const edges = new DataSet([
     { from: 1, to: 2 },
     { from: 2, to: 3 },
@@ -40,18 +42,18 @@ const visSetup = () => {
     { from: 4, to: 7 },
     { from: 9, to: 10 },
     { from: 10, to: 11 },
-    { from: 11, to: 1 },
-  ]);
-  const container = document.getElementById('network');
+    { from: 11, to: 1 }
+  ])
+  const container = document.getElementById('network')
   const data = {
-    nodes: nodes,
-    edges: edges
-  };
+    nodes,
+    edges
+  }
   const options = {
     width: '100%',
-    height: '100%',
-  };
-  new Network(container, data, options);
+    height: '100%'
+  }
+  new Network(container, data, options)
 }
 
 </script>
